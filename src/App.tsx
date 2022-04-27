@@ -67,7 +67,7 @@ const Events = () => {
         <>
           {events.map((event, index) => (
             <div className="rowWidth">
-                <h1 key={index}>Welcome Event</h1>
+                <h1 key={index}>{event.summary}</h1>
                 <p key={index}><span className='spanText'>Starts:</span> {moment(event.start.dateTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
                 <p key={index}><span className='spanText'>Ends:</span> {moment(event.end.dateTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
                 <p key={index}><span className='spanText'>Status:</span> {event.status}</p>
