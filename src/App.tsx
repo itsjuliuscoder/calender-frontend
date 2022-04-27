@@ -71,7 +71,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Calender Application <FaCalendarAlt /></h1>
+      <h1>Calendar Application <FaCalendarAlt /></h1>
       <button onClick={ () => callGoogle() } className="btnView">View Events</button>
       <div>
         {events && events.length > 0 && 
