@@ -35,7 +35,6 @@ const Home = () => {
 const Events = () => {
 
   const params = useParams();
-  console.log("these are the params", params);
 
   const [ events, setEvent ] = useState<any[]>([]);
 
