@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+.rowWidth {
+  width: 25%;
+  position: relative;
+  margin: auto;
+  padding: 2em;
+  background-color: #282c34;
+  color: #fff;
+  min-height: 50px;
+  text-align: left;
+}
+.spanText {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

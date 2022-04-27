@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { FaCalendarAlt } from "react-icons/fa";
 import axios from 'axios';
+import moment from 'moment';
 
 export default function App() {
   return (
@@ -27,9 +28,7 @@ const Home = () => {
   return (
     <div className="">
       <h1>Calendar Application <FaCalendarAlt /></h1>
-      <div className="rowWidth">
-          
-      </div>
+      
       <button onClick={ () => callGoogle() } className="btnView">View Events</button>
     </div>
   );
@@ -64,15 +63,27 @@ const Events = () => {
   return (
     <div>
       <h1>Calendar Events</h1>
-      {events && events.length > 0 && 
+      {events && events.length > 0 ? 
         <>
           {events.map((event, index) => (
-            <div className='row'>
-                <h1 key={index}>{event.summary}</h1>
-                <p key={index}>{event.summary}</p>
+            <div className="rowWidth">
+                <h1 key={index}>Welcome Event</h1>
+                <p key={index}><span className='spanText'>Starts:</span> {moment(event.start.dateTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+                <p key={index}><span className='spanText'>Ends:</span> {moment(event.end.dateTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+                <p key={index}><span className='spanText'>Status:</span> {event.status}</p>
             </div>
+            // <div className='row'>
+            //     <h1 key={index}>{event.summary}</h1>
+            //     <p key={index}>Starts: {moment(event.start.dateTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+            //     <p key={index}>Ends: {moment(event.end.dateTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+            //     <p key={index}>Status{event.status}</p>
+            // </div>
           )) }
         </>
+        :
+        <div className=''>
+          <h4>No Event Found</h4>
+        </div>
       }
     </div>
   );
