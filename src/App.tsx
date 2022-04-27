@@ -27,6 +27,9 @@ const Home = () => {
   return (
     <div className="">
       <h1>Calendar Application <FaCalendarAlt /></h1>
+      <div className="rowWidth">
+          
+      </div>
       <button onClick={ () => callGoogle() } className="btnView">View Events</button>
     </div>
   );
@@ -43,7 +46,6 @@ const Events = () => {
     axios
     .get(`https://www.googleapis.com/calendar/v3/calendars/${params.email}/events`, {
       headers: {
-        'Content-Length': '0',
         'Authorization': `Bearer ${token}`
       },
       timeout: 50000,
